@@ -1,0 +1,27 @@
+{
+  "name": "apparatus",
+  "version": "1.0.0",
+  "description": "Tools for creating design systems and component-based websites",
+  "scripts": {
+    "build": "webpack ./build/webpack.config.js --progress",
+    "production": "webpack ./build/webpack.config.prod.js -p --progress",
+    "dev": "webpack-dev-server ./build/webpack.config.dev.js --hot --progress",
+    "start": "serve dist",
+    "test": "tape **/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krambuhl/apparatus.git"
+  },
+  "keywords": [
+    "design+system",
+    "component",
+    "vue",
+    "build+tools"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krambuhl/apparatus/issues"
+  },
+  "homepage": "https://github.com/krambuhl/apparatus#readme"
+}
