@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Tools for creating design systems and component-based websites",
   "scripts": {
-    "build": "webpack ./build/webpack.config.js --progress",
-    "production": "webpack ./build/webpack.config.prod.js -p --progress",
-    "dev": "webpack-dev-server ./build/webpack.config.dev.js --hot --progress",
+    "build": "webpack --config ./build/webpack.config.js --mode development",
+    "production": "webpack --config ./build/webpack.config.prod.js --progress --mode production",
+    "dev": "webpack-dev-server --config ./build/webpack.config.dev.js --hot --progress --mode development",
     "start": "serve dist",
     "test": "tape **/*.test.js"
   },
@@ -23,5 +23,26 @@
   "bugs": {
     "url": "https://github.com/krambuhl/apparatus/issues"
   },
-  "homepage": "https://github.com/krambuhl/apparatus#readme"
+  "homepage": "https://github.com/krambuhl/apparatus#readme",
+  "dependencies": {
+    "extract-text-webpack-plugin": "next",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-vue-app": "^2.0.0",
+    "css-loader": "^0.28.11",
+    "frontmatter-loader": "^0.0.1",
+    "markdown-loader": "^2.0.2",
+    "postcss-loader": "^2.1.2",
+    "serve": "^6.5.3",
+    "vue-loader": "^14.2.1",
+    "vue-markdown-loader": "^2.4.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
+  }
 }

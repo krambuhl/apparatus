@@ -1,5 +1,7 @@
 ---
-MediaCard: './MediaCard.vue'
+template: library
+components:
+  - MediaCard: '@elements/MediaCard'
 ---
 
 # Media Card

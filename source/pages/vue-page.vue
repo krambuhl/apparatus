@@ -5,6 +5,7 @@
     <p>You can use vue data and actions to make pages interactive.</p>
 
     <action-button @click="addCard">Add Card</action-button>
+    <action-button @click="removeCard">Remove Card</action-button>
 
     <div class="grid">
       <media-card
@@ -16,7 +17,6 @@
         Labore officia exercitation et sit pariatur amet aliqua eu.
       </media-card>
     </div>
-
   </div>
 </template>
 
@@ -29,12 +29,15 @@ export default {
   },
   data () {
     return {
-      count: 0
+      count: 3
     };
   },
   methods: {
     addCard () {
       this.count++;
+    },
+    removeCard () {
+      this.count--;
     }
   }
 }
@@ -43,5 +46,6 @@ export default {
 <style scoped>
   .root {
     border: 2px solid black;
+    margin: auto;
   }
 </style>

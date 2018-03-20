@@ -1,5 +1,7 @@
 ---
-ActionButton: './ActionButton.vue'
+template: library
+components:
+  - ActionButton: '@elements/ActionButton'
 ---
 
 # Action Button

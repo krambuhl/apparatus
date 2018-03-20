@@ -1,5 +1,7 @@
 ---
-ActionButton: '@elements/ActionButton'
+template: page
+components:
+  - ActionButton: '@elements/ActionButton'
 ---
 
 # Apparatus
