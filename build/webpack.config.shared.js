@@ -1,4 +1,6 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 const {
   projectDirectory,
   outputDirectory,
@@ -36,5 +38,17 @@ module.exports = {
         loader: 'vue-markdown-loader!frontmatter-loader'
       }
     ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin()
+  ],
+  stats: {
+    hash: false,
+    version: false,
+    modules: false,
+    colors: true,
+    errors: true,
+    errorDetails: true,
+    children: false
   }
 }
