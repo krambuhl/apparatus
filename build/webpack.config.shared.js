@@ -2,9 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const {
-  projectDirectory,
+  entry,
   outputDirectory,
-  entry
+  alias
 } = require('../project-config')
 
 module.exports = {
@@ -16,11 +16,12 @@ module.exports = {
   },
   resolve: {
     extensions: ['.vue', '.js', '.json', '.md'],
+    modules: [path.resolve(__dirname, '../source'), 'node_modules'],
+    alias
+  },
+  resolveLoader: {
     alias: {
-      '@elements': path.resolve(projectDirectory, 'elements'),
-      '@layouts': path.resolve(projectDirectory, 'layouts'),
-      '@pages': path.resolve(projectDirectory, 'pages'),
-      '@static': path.resolve(projectDirectory, 'static')
+      'apparatus-loader': path.resolve(__dirname, 'lib/apparatus-loader')
     }
   },
   module: {
@@ -35,7 +36,11 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loader: 'vue-markdown-loader!frontmatter-loader'
+        use: [
+          { loader: 'html-loader' },
+          { loader: 'apparatus-loader' },
+          { loader: 'frontmatter-loader' }
+        ]
       }
     ]
   },
@@ -48,7 +53,6 @@ module.exports = {
     modules: false,
     colors: true,
     errors: true,
-    errorDetails: true,
-    children: false
+    errorDetails: true
   }
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="root">
-    <h1>I'm a vue component</h1>
+    <h1>This is a vue component!</h1>
 
-    <p>You can use vue data and actions to make pages interactive.</p>
+    <p>You can use vue data and methods to make pages interactive.</p>
 
     <action-button @click="addCard">Add Card</action-button>
     <action-button @click="removeCard">Remove Card</action-button>
@@ -26,6 +26,9 @@ export default {
   components: {
     ActionButton,
     MediaCard
+  },
+  head: {
+    title: 'Hello Vue'
   },
   data () {
     return {

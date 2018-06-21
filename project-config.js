@@ -1,9 +1,17 @@
 const path = require('path')
 
-module.exports.projectDirectory = path.resolve(__dirname, 'source')
+const projectDirectory = path.resolve(__dirname, 'source')
+
 module.exports.outputDirectory = path.resolve(__dirname, 'dist')
 
 module.exports.entry = {
-  assets: path.resolve(__dirname, 'source', 'assets.js'),
-  bundle: path.resolve(__dirname, 'source', 'bundle.js')
+  apparatus: path.resolve(__dirname, 'source/apparatus.js')
+}
+
+module.exports.alias = {
+  '@elements': path.resolve(projectDirectory, 'elements'),
+  '@layouts': path.resolve(projectDirectory, 'layouts'),
+  '@pages': path.resolve(projectDirectory, 'pages'),
+  '@static': path.resolve(projectDirectory, 'static'),
+  '@lib': path.resolve(projectDirectory, 'lib')
 }

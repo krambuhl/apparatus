@@ -1,7 +1,7 @@
 ---
 layout: library
 components:
-  ActionButton: require('./ActionButton.vue')
+  ActionButton: '@elements/ActionButton/ActionButton'
 ---
 
 # Action Button

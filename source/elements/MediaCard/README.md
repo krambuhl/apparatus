@@ -1,7 +1,7 @@
 ---
-template: library
+layout: library
 components:
-  - MediaCard: '@elements/MediaCard'
+  MediaCard: '@elements/MediaCard/MediaCard'
 ---
 
 # Media Card

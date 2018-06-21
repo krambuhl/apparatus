@@ -4,9 +4,21 @@ const { outputDirectory } = require('../project-config')
 
 module.exports = merge(config, {
   devServer: {
+    publicPath: '/',
     contentBase: outputDirectory,
     compress: true,
-    historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [{ from: /.*\.html/, to: '/index.html' }]
+    },
+    hot: true,
+    stats: {
+      hash: false,
+      version: false,
+      modules: false,
+      colors: true,
+      errors: true,
+      errorDetails: true
+    }
   },
   module: {
     rules: [
